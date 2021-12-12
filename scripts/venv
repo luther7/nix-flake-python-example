@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -eu
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+__recreate="${1:-false}"
+
+if [[ ! "${__recreate}" =~ ^(false|true) ]]; then
+  echo "ERROR: arg 1 'recreate' must be 'true' or 'false'" 2>&1
+  exit 1
+fi
+
+[[ "${__recreate}" == "true" ]] && rm -rf ./.venv
+
+if [[ ! -d ./.venv ]]; then
+  virtualenv ./.venv
+fi
+
+# shellcheck disable=1091
+source ./.venv/bin/activate
+pip install --requirement ./requirements-dev.txt
+pip install --editable .
+set +e

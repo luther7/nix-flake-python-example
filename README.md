@@ -2,70 +2,80 @@
 
 ## TODO
 
-- Check for black
-- Check for flake8
-- Check for isort
-- Check for mypy
-- Check for pytest
+- Checks:
+  - black
+  - flake8
+  - isort
+  - mypy
+  - pytest
 
 ## Requires
 
-- nix
-- direnv
+- `nix`
+- `direnv`
 
-_Or without nix using virtualenv:_
+Or without nix using virtualenv:
 
-- python39
-- virtualenv
+- `python39`
+- `virtualenv`
 
-## Usage without nix using virtualenv
+## Usage
 
-_Setup:_
-
-```sh
-source ./scripts/setup-venv
-```
-
-_Run:_
-
-```sh
-mypackage
-```
-
-## Usage with nix
-
-_Build and run:_
+Run:
 
 ```sh
 nix run . -- --example foo --example bar
 ```
 
-_Shell:_
+Shell:
 
 ```sh
 nix develop
 ```
 
-_Or with direnv:_
+Shell using direnv:
 
 ```sh
 direnv allow .
 ```
 
-_Run from shell:_
+Run from shell:
 
 ```sh
-python src/mypackage/__init__.py --example foo --example bar
+python src/mypackage/__init__py --example foo --example bar
 ```
 
-_Build prod:_
+Build and run prod:
 
 ```sh
 nix build
+./result/bin/mypackage
 ```
 
-_Run prod with:_
+## Usage without Nix using virtualenv
+
+Setup:
 
 ```sh
-./result/bin/mypackage
+source ./scripts/venv
+```
+
+Run:
+
+```sh
+mypackage
+```
+
+Setup with fresh virtualenv:
+
+```sh
+source ./scripts/venv true
+```
+
+## Update
+
+Updates flake and rebuilds `requirements.txt` and `requirements-dev.txt`:
+
+```sh
+./scripts/update
 ```

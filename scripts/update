@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+nix flake update
+
+for t in dev prod; do
+  __requirements="./requirements.txt"
+  [[ "${t}" == "dev" ]] && __requirements="./requirements-dev.txt"
+
+  rm -f "${__requirements}"
+  nix build ".#${t}Requirements"
+  cp ./result/requirements.txt "${__requirements}"
+done
