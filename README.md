@@ -18,23 +18,29 @@ _Or without nix using virtualenv:_
 - python39
 - virtualenv
 
-## Setup
+## Usage without nix using virtualenv
 
-_Without nix using virtualenv:_
+_Setup:_
 
 ```sh
 source ./scripts/setup-venv
 ```
 
-## Usage
+_Run:_
 
-### Run
+```sh
+mypackage
+```
+
+## Usage with nix
+
+_Build and run:_
 
 ```sh
 nix run . -- --example foo --example bar
 ```
 
-### Shell
+_Shell:_
 
 ```sh
 nix develop
@@ -46,19 +52,19 @@ _Or with direnv:_
 direnv allow .
 ```
 
-_Run with:_
+_Run from shell:_
 
 ```sh
 python src/mypackage/__init__.py --example foo --example bar
 ```
 
-### Build
+_Build prod:_
 
 ```sh
 nix build
 ```
 
-_Run with:_
+_Run prod with:_
 
 ```sh
 ./result/bin/mypackage
