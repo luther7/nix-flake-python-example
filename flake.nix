@@ -17,8 +17,6 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         python = "python39";
-        pname = "mypackage";
-        version = "0.1.0";
         inherit (nixpkgs.lib) concatStringsSep;
         pkgs = import nixpkgs { inherit system; };
         mach = import mach-nix {
@@ -41,7 +39,6 @@
           PYTHONPATH = ".";
           nativeBuildInputs = [
             devPython
-            pkgs.git
             pkgs.fd
           ];
           shellHook = ''
