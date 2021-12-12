@@ -74,7 +74,7 @@ source ./scripts/venv true
 
 ## Update
 
-Updates flake and rebuilds `requirements.txt` and `requirements-dev.txt`:
+Update flake, rebuild `requirements.txt` and `requirements-dev.txt`:
 
 ```sh
 ./scripts/update
