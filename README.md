@@ -1,13 +1,13 @@
-# Nix Python Template
+# Nix Flake Python Example
 
 ## TODO
 
-- Script to install with no nix using venv
-- Check for black
-- Check for flake8
-- Check for isort
-- Check for mypy
-- Check for pytest
+- [ ] Script to install with no nix using venv
+- [ ] Check for black
+- [ ] Check for flake8
+- [ ] Check for isort
+- [ ] Check for mypy
+- [ ] Check for pytest
 
 ## Requires
 
@@ -16,25 +16,25 @@
 
 ## Usage
 
-#### Run
+### Run
 
 ```sh
 nix run . -- --example foo --example bar
 ```
 
-#### Shell
+### Shell
 
 ```sh
 nix develop
 ```
 
-Or with direnv:
+_Or with direnv:_
 
 ```sh
 direnv allow .
 ```
 
-Run with:
+_Run with:_
 
 ```sh
 python src/mypackage/__init__.py --example foo --example bar
@@ -46,7 +46,7 @@ python src/mypackage/__init__.py --example foo --example bar
 nix build
 ```
 
-Run with:
+_Run with:_
 
 ```sh
 ./result/bin/mypackage
