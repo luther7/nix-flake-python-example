@@ -2,17 +2,29 @@
 
 ## TODO
 
-- [ ] Script to install with no nix using venv
-- [ ] Check for black
-- [ ] Check for flake8
-- [ ] Check for isort
-- [ ] Check for mypy
-- [ ] Check for pytest
+- Check for black
+- Check for flake8
+- Check for isort
+- Check for mypy
+- Check for pytest
 
 ## Requires
 
 - nix
 - direnv
+
+_Or without nix using virtualenv:_
+
+- python39
+- virtualenv
+
+## Setup
+
+_Without nix using virtualenv:_
+
+```sh
+source ./scripts/setup-venv
+```
 
 ## Usage
 

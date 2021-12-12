@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+[[ ! -d ./.venv ]] && virtualenv .venv
+
+# shellcheck disable=1091
+source .venv/bin/activate
+
+pip install --requirement requirements.txt --requirement requirements-dev.txt
+pip install --editable .
