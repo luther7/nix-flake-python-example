@@ -58,6 +58,8 @@
       in
       rec {
         packages.prod = mach.buildPythonPackage {
+          pname = "mypackage";
+          version = "0.0.1";
           src = ./.;
           requirements = prodRequirements;
         };
