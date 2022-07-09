@@ -6,14 +6,16 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     mach-nix = {
-      url = "github:DavHau/mach-nix/3.3.0";
+      url = "github:DavHau/mach-nix/3.5.0";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pypi-deps-db.follows = "pypi-deps-db";
     };
 
     pypi-deps-db = {
-      url = "github:DavHau/mach-nix/3.3.0";
+      url = "github:DavHau/mach-nix/3.5.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
   };
   outputs = { self, nixpkgs, flake-utils, mach-nix, pypi-deps-db }:
