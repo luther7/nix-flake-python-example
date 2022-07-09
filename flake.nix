@@ -38,7 +38,6 @@
 
         prodRequirements = ''
           click
-          pip
         '';
 
         freeze = ''
@@ -68,13 +67,13 @@
 
         packages.devRequirements = pkgs.runCommand "dev_requirements"
           {
-            buildInputs = [ devPython ];
+            buildInputs = [ devPython pkgs."${python}Packages".pip ];
           }
           freeze;
 
         packages.prodRequirements = pkgs.runCommand "prod_requirements"
           {
-            buildInputs = [ prodPython ];
+            buildInputs = [ prodPython pkgs."${python}Packages".pip ];
           }
           freeze;
 
